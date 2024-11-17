@@ -116,6 +116,7 @@ function generateMainMenuButtons(inGame){
         new Button
         (
             // PLAYER vs COMPUTER
+            
             sprites.onePlayersButton, 
             new Vector2(200,dev+400),
             function(){

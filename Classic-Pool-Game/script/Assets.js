@@ -14,10 +14,10 @@ Game.loadAssets = function () {
 
     sprites.mainMenuBackground = loadSprite("main_menu_background.png");
     sprites.background = loadSprite("spr_background4.png");
-    sprites.ball = loadSprite("spr_ball2.png");
-    sprites.redBall = loadSprite("spr_redBall2.png");
-    sprites.yellowBall = loadSprite("spr_yellowBall2.png");
-    sprites.blackBall = loadSprite("spr_blackBall2.png");
+    sprites.ball = loadSprite("WhiteBall.png");
+    sprites.redBall = loadSprite("RedBall.png");
+    sprites.yellowBall = loadSprite("BlueBall.png");
+    sprites.blackBall = loadSprite("8Ball.png");
     sprites.stick = loadSprite("spr_stick.png");
     sprites.twoPlayersButton = loadSprite("2_players_button.png");
     sprites.twoPlayersButtonHover = loadSprite("2_players_button_hover.png");

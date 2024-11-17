@@ -1,7 +1,7 @@
 const LOG = false;
 
-const BALL_SIZE = 38;
-const BORDER_SIZE = 57;
+const BALL_SIZE = 36;
+const BORDER_SIZE = 50;
 const HOLE_RADIUS = 46;
 
 const DELTA = 1/100;
