@@ -1,5 +1,7 @@
 "use strict";
 
+const DIRECT_START = true;
+
 var requestAnimationFrame = (function () {
     return  window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
@@ -67,7 +69,16 @@ Game_Singleton.prototype.assetLoadingLoop = function () {
         requestAnimationFrame(Game.assetLoadingLoop);
     else {
         Game.initialize();
-        requestAnimationFrame(this.mainMenu.load.bind(this.mainMenu));
+        
+        if (DIRECT_START) {
+            AI_ON = false;
+            GAME_STOPPED = false;
+            setTimeout(() => {
+                Game.startNewGame(100);
+            }, 200);
+        } else {
+            requestAnimationFrame(this.mainMenu.load.bind(this.mainMenu));
+        }
     }
 };
 
@@ -80,7 +91,7 @@ Game_Singleton.prototype.handleInput = function(){
     }
 }
 
-Game_Singleton.prototype.startNewGame = function(){
+Game_Singleton.prototype.startNewGame = function(wait_time = 5000){
     Canvas2D._canvas.style.cursor = "auto";
 
     Game.gameWorld = new GameWorld();
@@ -102,7 +113,7 @@ Game_Singleton.prototype.startNewGame = function(){
             AI.startSession();
         }
         Game.mainLoop();
-    },5000);
+    },wait_time);
 }
 
 Game_Singleton.prototype.continueGame = function(){

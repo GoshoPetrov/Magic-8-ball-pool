@@ -14,7 +14,13 @@ function Ball(initPos,color){
 Object.defineProperty(Ball.prototype, "color",
     {
     	get: function(){
-    		if(this.sprite == sprites.redBall){
+    		if(this.sprite == sprites.power_purple){
+    			return "power_purple";
+    		}
+            else if(this.sprite == sprites.power_green){
+    			return "power_green";
+    		}
+    		else if(this.sprite == sprites.redBall){
     			return Color.red;
     		}
     		else if(this.sprite == sprites.yellowBall){
@@ -28,7 +34,13 @@ Object.defineProperty(Ball.prototype, "color",
     		}
     	},
         set: function (value) {
-            if (value === Color.red){
+            if (value === "power_purple"){
+                this.sprite = sprites.power_purple;
+            }
+            else if (value === "power_green"){
+                this.sprite = sprites.power_green;
+            }
+            else if (value === Color.red){
                 this.sprite = sprites.redBall;
             }
             else if(value == Color.yellow){

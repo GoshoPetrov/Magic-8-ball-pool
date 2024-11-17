@@ -21,7 +21,7 @@ function GameWorld() {
     new Ball(new Vector2(1126,354),Color.yellow),//7
     new Ball(new Vector2(1126,433),Color.yellow),//9
     new Ball(new Vector2(1162,413),Color.yellow),//13
-    new Ball(new Vector2(1162,491),Color.yellow)//15
+    new Ball(new Vector2(1162,491),"power_green")//15
     ];
 
     this.whiteBall = new Ball(new Vector2(413,413),Color.white);
