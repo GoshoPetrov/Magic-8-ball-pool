@@ -197,6 +197,7 @@ GameWorld.prototype.handleCollision = function(ball1, ball2, delta){
 GameWorld.prototype.draw = function () {
     Canvas2D.drawImage(sprites.background);
     Game.policy.drawScores();
+    Game.policy.drawPower();
 
     for (var i = 0; i < this.balls.length; i++) {
         this.balls[i].draw();

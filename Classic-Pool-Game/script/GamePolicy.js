@@ -51,6 +51,31 @@ GamePolicy.prototype.drawScores = function(){
     this.players[1].matchScore.drawLines(this.players[1].color);
 }
 
+GamePolicy.prototype.drawPower = function(){
+    this.players[0].powerUp.forEach((power, index) => {
+        Canvas2D.drawText(power.caption, 
+            new Vector2(60,450 + index * 70), // position
+            new Vector2(0,0), // origin
+            "#0968A0", 
+            "top", // align
+            "Impact", // font name
+            "70px" // font size
+        );
+    });
+
+    this.players[1].powerUp.forEach((power, index) => {
+        Canvas2D.drawText(power.caption, 
+            new Vector2(1060,450+ index * 70), // position
+            new Vector2(0,0), // origin
+            "#0968A0", 
+            "top", // align
+            "Impact", // font name
+            "70px" // font size
+        );
+    });
+
+}
+
 GamePolicy.prototype.checkColisionValidity = function(ball1,ball2){
 
     let currentPlayerColor = this.players[this.turn].color;
@@ -90,7 +115,18 @@ GamePolicy.prototype.handleBallInHole = function(ball){
     let currentPlayer = this.players[this.turn];
     let secondPlayer = this.players[(this.turn+1)%2];
 
-    if(currentPlayer.color == undefined){
+    const is_power_up = ball.color === "power_green"
+        || ball.color === "power_purple";
+
+    if (is_power_up) {
+        console.log(ball.color);
+
+        const power = RandomPower();
+        currentPlayer.powerUp.push(power);
+    }
+
+    if(currentPlayer.color == undefined)
+    {
         if(ball.color === Color.red){
             currentPlayer.color = Color.red;
             secondPlayer.color = Color.yellow;
