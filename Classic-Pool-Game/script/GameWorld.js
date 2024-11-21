@@ -5,21 +5,21 @@ function GameWorld() {
     this.whiteBallStartingPosition = new Vector2(413,413);
 
     this.redBalls = [
-    new Ball(new Vector2(1056,433),Color.red),//3
+    new Ball(new Vector2(1056,433),"power_purple"),//3
     new Ball(new Vector2(1090,374),Color.red),//4
     new Ball(new Vector2(1126,393),Color.red),//8
-    new Ball(new Vector2(1126,472),Color.red),//10;
+    new Ball(new Vector2(1126,472),"power_purple"),//10;
     new Ball(new Vector2(1162,335),Color.red),//11
-    new Ball(new Vector2(1162,374),Color.red),//12
+    new Ball(new Vector2(1162,374),"power_purple"),//12
     new Ball(new Vector2(1162,452),Color.red)//14
     ]
 
     this.yellowBalls = [
     new Ball(new Vector2(1022,413),Color.yellow),//1
-    new Ball(new Vector2(1056,393),Color.yellow),//2
+    new Ball(new Vector2(1056,393),"power_green"),//2
     new Ball(new Vector2(1090,452),Color.yellow),//6
     new Ball(new Vector2(1126,354),Color.yellow),//7
-    new Ball(new Vector2(1126,433),Color.yellow),//9
+    new Ball(new Vector2(1126,433),"power_green"),//9
     new Ball(new Vector2(1162,413),Color.yellow),//13
     new Ball(new Vector2(1162,491),"power_green")//15
     ];

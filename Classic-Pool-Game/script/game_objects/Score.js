@@ -44,5 +44,5 @@ Score.prototype.drawLines = function (color) {
   };
 
 Score.prototype.increment = function(){
-    this.value++;
+    this.value += 1 * SCORE_SCALE;
 };

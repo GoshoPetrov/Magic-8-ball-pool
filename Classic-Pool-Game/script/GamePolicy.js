@@ -122,6 +122,7 @@ GamePolicy.prototype.handleBallInHole = function(ball){
         console.log(ball.color);
 
         const power = RandomPower();
+        power.start();
         currentPlayer.powerUp.push(power);
     }
 
@@ -190,8 +191,26 @@ GamePolicy.prototype.handleBallInHole = function(ball){
 }
 
 GamePolicy.prototype.switchTurns = function(){
+
+    this.stopPowers(this.turn);
+
     this.turn++;
-    this.turn%=2;
+    this.turn %= 2;
+
+    this.startPowers(this.turn);
+
+}
+
+GamePolicy.prototype.startPowers = function(playerIndex) {
+    this.players[playerIndex].powerUp.forEach((p) => {
+        p.start();
+    })
+}
+
+GamePolicy.prototype.stopPowers = function(playerIndex) {
+    this.players[playerIndex].powerUp.forEach((p) => {
+        p.stop();
+    })
 }
 
 GamePolicy.prototype.updateTurnOutcome = function(){
