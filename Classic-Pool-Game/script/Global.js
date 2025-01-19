@@ -1,5 +1,11 @@
 const LOG = false;
 
+let FRICTION_SCALE = 1;
+
+function setFriction(friction) {
+    FRICTION_SCALE = friction;
+}
+
 let FATIGUE = 1;
 
 function setFatigue(fatigue) {

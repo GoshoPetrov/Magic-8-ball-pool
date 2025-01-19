@@ -73,7 +73,7 @@ Ball.prototype.update = function(delta){
 
     this.updatePosition(delta);
 
-    this.velocity.multiplyWith(0.98);
+    this.velocity.multiplyWith(0.98 * FRICTION_SCALE);
 
 	if(this.moving && Math.abs(this.velocity.x) < 1 && Math.abs(this.velocity.y) < 1){
         this.stop();
@@ -104,7 +104,7 @@ Ball.prototype.updatePosition = function(delta){
     var collision = this.handleCollision(newPos);
 
     if(collision){
-		this.velocity.multiplyWith(0.95);
+		this.velocity.multiplyWith(0.95 * FRICTION_SCALE);
     }else{
     	this.position = newPos;
     }

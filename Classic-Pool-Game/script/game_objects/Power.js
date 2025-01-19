@@ -21,8 +21,10 @@ Power.prototype.start = function () {
             setFatigue(0.1);
             break;
         case POWER_FRICTION:
+            setFriction(0.9);
             break;
         case POWER_SLIPPERY:
+            setFriction(1.02);
             break;
     }
     
@@ -40,8 +42,10 @@ Power.prototype.stop = function () {
             setFatigue(1);
             break;
         case POWER_FRICTION:
+            setFriction(1);
             break;
         case POWER_SLIPPERY:
+            setFriction(1);
             break;
     }
 }

@@ -184,12 +184,12 @@ GameWorld.prototype.handleCollision = function(ball1, ball2, delta){
         var velocity2 = new Vector2(90*Math.cos(rotation + Math.PI)*power,90*Math.sin(rotation + Math.PI)*power);
         ball2.velocity = ball2.velocity.addTo(velocity2);
 
-        ball2.velocity.multiplyWith(0.97);
+        ball2.velocity.multiplyWith(0.97 * FRICTION_SCALE);
 
         var velocity1 = new Vector2(90*Math.cos(rotation)*power,90*Math.sin(rotation)*power);
         ball1.velocity = ball1.velocity.addTo(velocity1);
 
-        ball1.velocity.multiplyWith(0.97);
+        ball1.velocity.multiplyWith(0.97 * FRICTION_SCALE);
     }
 
 }
