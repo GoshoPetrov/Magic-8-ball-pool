@@ -10,8 +10,8 @@ function GamePolicy(){
     let player2MatchScore = new Score(new Vector2(Game.size.x/2 + 230,108));
 
     const player1 = new Player(player1MatchScore,player1TotalScore);
-    player1.powerUp.push(new Power(POWER_BIG));
-    player1.powerUp[0].start();
+    // player1.powerUp.push(new Power(POWER_FATIGUE));
+    // player1.powerUp[0].start();
 
     const player2 = new Player(player2MatchScore,player2TotalScore);
 

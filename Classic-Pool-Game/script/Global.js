@@ -1,5 +1,11 @@
 const LOG = false;
 
+let FATIGUE = 1;
+
+function setFatigue(fatigue) {
+    FATIGUE = fatigue;
+}
+
 let SCORE_SCALE = 1;
 let BALL_SIZE_SCALE = 1;
 let BALL_SIZE = 36 * BALL_SIZE_SCALE;

@@ -18,6 +18,7 @@ Power.prototype.start = function () {
             SCORE_SCALE = 2;
             break;
         case POWER_FATIGUE:
+            setFatigue(0.1);
             break;
         case POWER_FRICTION:
             break;
@@ -36,6 +37,7 @@ Power.prototype.stop = function () {
             SCORE_SCALE = 1;
             break;
         case POWER_FATIGUE:
+            setFatigue(1);
             break;
         case POWER_FRICTION:
             break;

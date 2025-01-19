@@ -41,7 +41,7 @@ Stick.prototype.handleInput = function (delta) {
       this.shooting = true;
       this.origin = this.shotOrigin.copy();
 
-      Game.gameWorld.whiteBall.shoot(this.power, this.rotation);
+      Game.gameWorld.whiteBall.shoot(this.power * FATIGUE, this.rotation);
       var stick = this;
       setTimeout(function(){stick.visible = false;}, 500);
     }
@@ -65,7 +65,7 @@ Stick.prototype.shoot = function(power, rotation){
   this.shooting = true;
   this.origin = this.shotOrigin.copy();
 
-  Game.gameWorld.whiteBall.shoot(this.power, this.rotation);
+  Game.gameWorld.whiteBall.shoot(this.power * FATIGUE, this.rotation);
   var stick = this;
   setTimeout(function(){stick.visible = false;}, 500);
 }
