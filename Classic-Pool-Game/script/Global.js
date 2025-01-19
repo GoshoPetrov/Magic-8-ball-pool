@@ -2,8 +2,12 @@ const LOG = false;
 
 let SCORE_SCALE = 1;
 let BALL_SIZE_SCALE = 1;
+let BALL_SIZE = 36 * BALL_SIZE_SCALE;
 
-const BALL_SIZE = 36 * BALL_SIZE_SCALE;
+function setBallSize(size){
+    BALL_SIZE_SCALE = size;
+    BALL_SIZE = 36 * BALL_SIZE_SCALE;
+}
 
 const BORDER_SIZE = 50;
 const HOLE_RADIUS = 46;

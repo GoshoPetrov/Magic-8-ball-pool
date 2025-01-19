@@ -1,28 +1,46 @@
 
+const POWER_BIG = "Big balls";
+const POWER_DOUBLE_POINTS = "Double points";
+const POWER_FATIGUE = "Fatigue";
+const POWER_FRICTION = "Friction";
+const POWER_SLIPPERY = "Slippery";
+
 function Power(caption){
     this.caption = caption;
 }
 
 Power.prototype.start = function () {
-    if (this.caption === "Big balls") 
-    {
-        BALL_SIZE_SCALE = 1.5;
-    }
-    else if (this.caption === "Double points") 
-    {
-        SCORE_SCALE = 2;
+    switch (this.caption) {
+        case POWER_BIG:
+            setBallSize(1.5);
+            break;
+        case POWER_DOUBLE_POINTS:
+            SCORE_SCALE = 2;
+            break;
+        case POWER_FATIGUE:
+            break;
+        case POWER_FRICTION:
+            break;
+        case POWER_SLIPPERY:
+            break;
     }
     
 }
 
 Power.prototype.stop = function () {
-    if (this.caption === "Big balls") 
-    {
-        BALL_SIZE_SCALE = 1;
-    } 
-    else if (this.caption === "Double points") 
-    {
-        SCORE_SCALE = 1;
+    switch (this.caption) {
+        case POWER_BIG:
+            setBallSize(1);
+            break;
+        case POWER_DOUBLE_POINTS:
+            SCORE_SCALE = 1;
+            break;
+        case POWER_FATIGUE:
+            break;
+        case POWER_FRICTION:
+            break;
+        case POWER_SLIPPERY:
+            break;
     }
 }
 
@@ -30,12 +48,14 @@ Power.prototype.stop = function () {
 function RandomPower() {
 
     const powers = [
-        "Double points",
-        "Big balls",
+        POWER_BIG,
+        POWER_DOUBLE_POINTS,
+        POWER_FATIGUE,
+        POWER_FRICTION,
+        POWER_SLIPPERY,
     ];
 
-    return new Power(powers[
-        Math.floor(Math.random() * (powers.length + 1))
-    ]);
+    const index = Math.floor(Math.random() * powers.length);
+    return new Power(powers[index]);
 
 }

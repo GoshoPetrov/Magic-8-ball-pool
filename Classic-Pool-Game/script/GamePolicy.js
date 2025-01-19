@@ -9,7 +9,13 @@ function GamePolicy(){
     let player1MatchScore = new Score(new Vector2(Game.size.x/2 - 280,108));
     let player2MatchScore = new Score(new Vector2(Game.size.x/2 + 230,108));
 
-    this.players = [new Player(player1MatchScore,player1TotalScore), new Player(player2MatchScore,player2TotalScore)];
+    const player1 = new Player(player1MatchScore,player1TotalScore);
+    player1.powerUp.push(new Power(POWER_BIG));
+    player1.powerUp[0].start();
+
+    const player2 = new Player(player2MatchScore,player2TotalScore);
+
+    this.players = [player1, player2];
     this.foul = false;
     this.scored = false;
     this.won = false;
