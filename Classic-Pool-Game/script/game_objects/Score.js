@@ -31,13 +31,13 @@ Score.prototype.drawLines = function (color) {
         let pos = this.position.add(new Vector2(i*15,0));
 
         Canvas2D.drawText(
-            "I", 
+            "X", 
             pos, 
             this.origin, 
             color, 
             "top", 
             "Arial", 
-            "20px"
+            "30px"
         );
 
     }
