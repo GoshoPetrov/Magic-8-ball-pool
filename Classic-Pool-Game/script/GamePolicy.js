@@ -214,9 +214,18 @@ GamePolicy.prototype.startPowers = function(playerIndex) {
 }
 
 GamePolicy.prototype.stopPowers = function(playerIndex) {
+    const toRemove = [];
     this.players[playerIndex].powerUp.forEach((p) => {
         p.stop();
-    })
+        if (p.countActivated > 1) {
+            toRemove.push(p);
+        }
+    });
+
+    toRemove.forEach((p) => {
+        const index = this.players[playerIndex].powerUp.indexOf(p);
+        this.players[playerIndex].powerUp.splice(index, 1);
+    });
 }
 
 GamePolicy.prototype.updateTurnOutcome = function(){

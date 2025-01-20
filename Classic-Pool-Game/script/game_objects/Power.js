@@ -5,11 +5,15 @@ const POWER_FATIGUE = "Fatigue";
 const POWER_FRICTION = "Friction";
 const POWER_SLIPPERY = "Slippery";
 
+
+
 function Power(caption){
     this.caption = caption;
+    this.countActivated = 0;
 }
 
 Power.prototype.start = function () {
+    this.countActivated++;
     switch (this.caption) {
         case POWER_BIG:
             setBallSize(1.5);
